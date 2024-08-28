@@ -1,0 +1,83 @@
+/* src/styles/LoginPage.css */
+
+/* src/styles/LoginPage.css */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  font-family: "Arial", sans-serif;
+}
+
+.login-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9fafb; /* Tailwind color: bg-gray-50 */
+  overflow: hidden;
+  padding: 0 1rem;
+}
+
+.form-container {
+  position: relative;
+  z-index: 10;
+  background-color: rgba(31, 41, 55, 0.9); /* Tailwind color: bg-gray-800 with opacity */
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  transition:
+    transform 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+  margin: auto; /* Center horizontally and vertically */
+}
+
+.backgroundimage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/background-image.png"); /* Placeholder image */
+  background-size: cover;
+  background-position: center;
+  filter: blur(1.8px);
+  z-index: 0;
+}
+
+.login-form,
+.register-form {
+  position: relative;
+  width: 100%;
+  transition:
+    opacity 0.5s ease-in-out,
+    transform 0.5s ease-in-out;
+}
+
+.login-form {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.register-form {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.login-form.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.register-form.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateX(100%);
+}
